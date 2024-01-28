@@ -4,11 +4,8 @@ import { PrismaClient } from "@prisma/client";
 export async function POST(req, res) {
   try {
     const reqBody = await req.json();
-
     reqBody.otp = "0";
-
     const prisma = new PrismaClient();
-    console.log(reqBody);
     const result = await prisma.users.create({
       data: reqBody,
     });
