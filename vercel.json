@@ -1,0 +1,23 @@
+{
+    "builds": [
+      {
+        "src": "api/**/*.js",
+        "use": "@vercel/node",
+        "config": {
+          "maxLambdaSize": "50mb"
+        }
+      },
+      {
+        "src": "prisma/schema.prisma",
+        "use": "@prisma/cli",
+        "config": {
+          "PRISMA_CLIENT_VERSION": "2.28.0"
+        }
+      }
+    ],
+    "routes": [
+      { "handle": "filesystem" },
+      { "src": "/.*", "dest": "/api/news/details/[...slug].js" }
+    ]
+  }
+  
