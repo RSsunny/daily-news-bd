@@ -36,19 +36,19 @@ const ContactLink = () => {
       icon: UserGroupIcon,
     },
     {
-      title: "Sponsors & Partners",
+      title: "Sponsrs & Partners",
       link: "sponsors",
       description: "Find the perfect solution for your needs.",
       icon: Bars4Icon,
     },
     {
-      title: "Mission & Vision",
+      title: "Mision & Vision",
       link: "mission",
       description: "Learn how we can help you achieve your goals.",
       icon: SunIcon,
     },
     {
-      title: "Branches",
+      title: "Brnches",
       link: "branch",
       description: "Reach out to us for assistance or inquiries",
       icon: GlobeAmericasIcon,
