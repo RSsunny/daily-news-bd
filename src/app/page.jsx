@@ -1,8 +1,14 @@
-const HomePage = () => {
+import Banner from "@/components/Header/Banner/Banner";
+import Navbar from "@/components/Header/Navbar/Navbar";
+import Logo from "@/utils/Logo";
+
+const HomePage = async () => {
   return (
-    <div>
-      <h1>Home page</h1>
-    </div>
+    <>
+      <Logo />
+      <Navbar />
+      <Banner />
+    </>
   );
 };
 
