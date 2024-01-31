@@ -5,7 +5,7 @@ import ContactLink from "../NavLink/contactLink";
 const Navbar = () => {
   return (
     <div>
-      <div className="flex items-center justify-center gap-5 border-y py-3 ">
+      <div className="flex items-center justify-center gap-5 border-y  py-3 ">
         <AboutLink />
         <ContactLink />
         <AboutLink />

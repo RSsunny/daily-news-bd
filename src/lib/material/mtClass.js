@@ -10,6 +10,7 @@ import {
   MenuHandler,
   MenuList,
   MenuItem,
+  Carousel,
 } from "@material-tailwind/react";
 
 export {
@@ -24,4 +25,5 @@ export {
   MenuHandler,
   MenuList,
   MenuItem,
+  Carousel,
 };

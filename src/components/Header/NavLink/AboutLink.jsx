@@ -133,7 +133,7 @@ const AboutLink = () => {
             </div>
           </Typography>
         </MenuHandler>
-        <MenuList className=" w-screen -mt-2   rounded-none  pb-20 px-20 ease-linear duration-200 min-h-96  z-50">
+        <MenuList className=" w-screen -mt-1   rounded-none  pb-20 px-20 ease-linear duration-200 min-h-96  z-50">
           <ul className="grid grid-cols-3 gap-y-2 outline-none outline-0  max-w-6xl mx-auto">
             {renderItems}
           </ul>

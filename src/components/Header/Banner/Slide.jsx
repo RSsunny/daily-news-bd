@@ -1,55 +1,44 @@
 "use client";
-import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 
-import "../../../assets/slide.css";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { imagePro } from "@/lib/image/image";
+import { Carousel } from "@/lib/material/mtClass";
+
 import Image from "next/image";
 const Slide = () => {
   return (
     <>
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        // navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper h-[400px] w-full"
+      <Carousel
+        className="rounded-xl"
+        autoplay={true}
+        autoplayDelay={3000}
+        loop={true}
+        navigation={({ setActiveIndex, activeIndex, length }) => (
+          <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+            {new Array(length).fill("").map((_, i) => (
+              <span
+                key={i}
+                className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
+                  activeIndex === i ? "w-8 bg-black" : "w-4 bg-white/50"
+                }`}
+                onClick={() => setActiveIndex(i)}
+              />
+            ))}
+          </div>
+        )}
       >
-        <SwiperSlide className="">
-          <Image
-            src="https://i.ibb.co/BBGX89q/images-13.jpg"
-            width={1152}
-            height={400}
-            alt="banner1"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src="https://i.ibb.co/4Fm2Btb/images-12.jpg"
-            width={1152}
-            height={400}
-            alt="banner1"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src=" https://i.ibb.co/gz15TCF/images-11.jpg"
-            width={1152}
-            height={400}
-            alt="banner1"
-          />
-        </SwiperSlide>
-      </Swiper>
+        {imagePro.map((image, indx) => {
+          return (
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={500}
+              height={400}
+              className=" object-cover w-full h-[400px]"
+              key={indx}
+            />
+          );
+        })}
+      </Carousel>
     </>
   );
 };
