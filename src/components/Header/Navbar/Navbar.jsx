@@ -1,6 +1,6 @@
 import Link from "next/link";
 import AboutLink from "../NavLink/AboutLink";
-import ContactLink from "../NavLink/contactLink";
+import ContactLink from "../NavLink/ContactLink";
 
 const Navbar = () => {
   return (
