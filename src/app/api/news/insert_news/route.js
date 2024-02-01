@@ -30,6 +30,9 @@ export async function POST(req, res) {
           type: reqBody?.type,
           meta_des: reqBody?.meta_des,
           meta_title: reqBody?.meta_title,
+          author: reqBody.author,
+          author_email: reqBody?.author_email,
+          author_img: reqBody?.author_img,
           categorieId: id,
         },
       });
@@ -54,6 +57,9 @@ export async function POST(req, res) {
           type: reqBody?.type,
           meta_des: reqBody?.meta_des,
           meta_title: reqBody?.meta_title,
+          author: reqBody?.author,
+          author_email: reqBody?.author_email,
+          author_img: reqBody?.author_img,
           categorieId: id,
         },
       });

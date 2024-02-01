@@ -21,7 +21,7 @@ import {
 import Link from "next/link";
 
 import React, { useState } from "react";
-const AboutLink = () => {
+const AboutLink = ({ category }) => {
   const navListMenuItems = [
     {
       title: "Awards",
@@ -129,7 +129,7 @@ const AboutLink = () => {
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
-              About us
+              {category.name}
             </div>
           </Typography>
         </MenuHandler>

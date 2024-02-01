@@ -1,3 +1,6 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -17,19 +20,22 @@ model categories {
 }
 
 model news_list {
-  id          Int    @id @default(autoincrement())
-  title       String @db.VarChar(100)
-  short_des   String @db.VarChar(400)
-  img1        String @db.VarChar(300)
-  img2        String @db.VarChar(300)
-  img3        String @db.VarChar(300)
-  img4        String @db.VarChar(300)
-  keywords    String @db.VarChar(300)
-  long_des    String @db.LongText
-  type        String @db.VarChar(200)
-  meta_des    String @db.VarChar(500)
-  meta_title  String @db.VarChar(300)
-  categorieId Int
+  id           Int    @id @default(autoincrement())
+  title        String @db.VarChar(100)
+  short_des    String @db.VarChar(400)
+  img1         String @db.VarChar(300)
+  img2         String @db.VarChar(300)
+  img3         String @db.VarChar(300)
+  img4         String @db.VarChar(300)
+  keywords     String @db.VarChar(300)
+  long_des     String @db.LongText
+  type         String @db.VarChar(200)
+  meta_des     String @db.VarChar(500)
+  meta_title   String @db.VarChar(300)
+  author       String @db.VarChar(50)
+  author_email String @db.VarChar(50)
+  author_img   String @db.VarChar(500)
+  categorieId  Int
 
   categories categories @relation(fields: [categorieId], references: [id], onDelete: Restrict, onUpdate: Cascade)
   createdAt  DateTime   @default(now()) @db.Timestamp(0)

@@ -6,14 +6,14 @@ export async function GET(req, res) {
     const prisma = new PrismaClient();
     let searchParams = new URL(req.url).searchParams;
     let name = searchParams.get("name");
-    console.log(name);
+
     let obj = {};
     if (name) {
       obj.name = name;
     }
     const result = await prisma.categories.findMany({
       where: obj,
-      select: { name: true, id: true },
+      include: { news_list: true },
     });
     return NextResponse.json({ status: "success", data: result });
   } catch (error) {

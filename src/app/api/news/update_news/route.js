@@ -1,14 +1,16 @@
 import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 
-export async function GET(req, res) {
+export async function PATCH(req, res) {
   try {
+    const reqBody = await req.json();
     const { searchParams } = new URL(req.url);
-    let type = searchParams.get("type");
+    let id = searchParams.get("id");
+
     const prisma = new PrismaClient();
-    const result = await prisma.news_list.findMany({
-      where: { type: type },
-      take: 10,
+    const result = await prisma.news_list.update({
+      where: { id: parseInt(id) },
+      data: reqBody,
     });
 
     return NextResponse.json({ message: "success", data: result });

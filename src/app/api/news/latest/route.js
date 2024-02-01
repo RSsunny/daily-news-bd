@@ -11,6 +11,8 @@ export async function GET(req, res) {
         title: true,
         type: true,
         short_des: true,
+        long_des: true,
+        author: true,
         img1: true,
         img2: true,
         img3: true,
