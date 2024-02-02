@@ -2,6 +2,7 @@
 
 import {
   Bars4Icon,
+  ChevronDownIcon,
   GlobeAmericasIcon,
   NewspaperIcon,
   PhoneIcon,
@@ -125,11 +126,18 @@ const ContactLink = () => {
         <MenuHandler>
           <Typography as="div" variant="small" className="font-medium ">
             <div
-              className={`flex items-center gap-3 text-sm font-bold     capitalize  hover:bg-none hover:border-b hover:border-b-green-400 ease-in duration-500 rounded-none  p-0 pb-1 cursor-pointer `}
+              className={`flex items-center gap-3 text-sm font-bold     capitalize  hover:bg-none border-b border-b-white hover:border-b-green-400 ease-linear duration-500 rounded-none  p-0 pb-1 cursor-pointer `}
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
-              Contact us
+              <p> Contact</p>
+
+              <ChevronDownIcon
+                strokeWidth={2.5}
+                className={`h-3 w-3 transition-transform  ${
+                  isMenuOpen ? "rotate-180" : ""
+                }`}
+              />
             </div>
           </Typography>
         </MenuHandler>

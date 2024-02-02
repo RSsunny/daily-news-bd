@@ -1,16 +1,14 @@
 "use client";
-
-import { imagePro } from "@/lib/image/image";
 import { Carousel } from "@/lib/material/mtClass";
 
 import Image from "next/image";
-const Slide = () => {
+const Slide = ({ bannerNews }) => {
   return (
     <>
       <Carousel
         className="rounded-xl"
         autoplay={true}
-        autoplayDelay={3000}
+        autoplayDelay={9000}
         loop={true}
         navigation={({ setActiveIndex, activeIndex, length }) => (
           <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
@@ -26,16 +24,21 @@ const Slide = () => {
           </div>
         )}
       >
-        {imagePro.map((image, indx) => {
+        {bannerNews?.map((news, indx) => {
           return (
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={500}
-              height={400}
-              className=" object-cover w-full h-[400px]"
-              key={indx}
-            />
+            <div key={indx} className="relative cursor-pointer">
+              <Image
+                src={news?.img1}
+                alt={news?.title}
+                width={500}
+                height={400}
+                className=" object-cover w-full h-[400px]"
+              />
+              <div className="absolute bottom-0   bg-gray-300 px-10 py-5 bg-opacity-60 w-full">
+                <h1 className="text-4xl font-bold">{news?.title}</h1>
+                <p className="font-bold">{news?.short_des}</p>
+              </div>
+            </div>
           );
         })}
       </Carousel>

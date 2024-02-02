@@ -1,21 +1,19 @@
+import timeControl from "@/utils/timeControl";
 import Image from "next/image";
+import Link from "next/link";
 
 const TopNewsCard = ({ data }) => {
-  const originalDate = new Date(data?.createdAt);
-
-  const year = originalDate.getFullYear();
-  const month = originalDate.getMonth() + 1;
-  const day = originalDate.getDate();
-  const time = `${month < 10 ? "0" : ""}${month}-${
-    day < 10 ? "0" : ""
-  }${day}-${year}`;
+  const time = timeControl({ time: data?.createdAt });
 
   return (
-    <div className="flex gap-5 border-b border-black pb-8 mb-8">
+    <Link
+      href={`/newsDetails?id=${data?.id}`}
+      className="flex gap-5 border-b border-black pb-8 mb-8 cursor-pointer"
+    >
       <div className="flex-1">
         <h1 className="text-3xl font-bold mb-5">{data?.title}</h1>
         <p className="pb-5 border-b my-5">{data?.short_des}</p>
-        <p>{data?.long_des}.......see more</p>
+        <p>{data?.long_des.slice(0, 200)}.......see more</p>
       </div>
       <div className="flex-1">
         <Image
@@ -30,7 +28,7 @@ const TopNewsCard = ({ data }) => {
           <p>{time}</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

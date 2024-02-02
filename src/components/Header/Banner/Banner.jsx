@@ -1,9 +1,9 @@
 import Slide from "./Slide";
 
-const Banner = () => {
+const Banner = ({ bannerNews }) => {
   return (
     <div className="mt-2">
-      <Slide />
+      <Slide bannerNews={bannerNews} />
     </div>
   );
 };

@@ -2,6 +2,7 @@
 
 import {
   Bars4Icon,
+  ChevronDownIcon,
   GlobeAmericasIcon,
   NewspaperIcon,
   PhoneIcon,
@@ -19,9 +20,8 @@ import {
   Typography,
 } from "@/lib/material/mtClass";
 import Link from "next/link";
-
 import React, { useState } from "react";
-const AboutLink = ({ category }) => {
+const AboutLink = () => {
   const navListMenuItems = [
     {
       title: "Awards",
@@ -84,7 +84,7 @@ const AboutLink = ({ category }) => {
   const renderItems = navListMenuItems.map(
     ({ icon, title, description }, key) => (
       <Link href={"/about"} key={key}>
-        <MenuItem className="flex items-center gap-3 rounded-lg">
+        <MenuItem className="flex items-center gap-3 rounded-lg ">
           <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2 ">
             {" "}
             {React.createElement(icon, {
@@ -125,16 +125,23 @@ const AboutLink = ({ category }) => {
         <MenuHandler>
           <Typography as="div" variant="small" className="font-medium ">
             <div
-              className={`flex items-center gap-3 text-sm font-bold     capitalize  hover:bg-none hover:border-b hover:border-b-green-400 ease-in duration-500 rounded-none  p-0 pb-1 cursor-pointer `}
+              className={`flex items-center gap-3 text-sm font-bold     capitalize  hover:bg-none border-b border-b-white hover:border-b-green-400 ease-linear duration-500 rounded-none  p-0 pb-1 cursor-pointer `}
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
-              {category.name}
+              <p> About</p>
+
+              <ChevronDownIcon
+                strokeWidth={2.5}
+                className={` h-3 w-3 transition-transform  ${
+                  isMenuOpen ? "rotate-180" : ""
+                }`}
+              />
             </div>
           </Typography>
         </MenuHandler>
         <MenuList className=" w-screen -mt-1   rounded-none  pb-20 px-20 ease-linear duration-200 min-h-96  z-50">
-          <ul className="grid grid-cols-3 gap-y-2 outline-none outline-0  max-w-6xl mx-auto">
+          <ul className="grid grid-cols-3 gap-y-2 outline-none outline-0   max-w-6xl mx-auto">
             {renderItems}
           </ul>
         </MenuList>
