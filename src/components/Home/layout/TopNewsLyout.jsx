@@ -1,8 +1,8 @@
-import TopNews from "../Top_News/TopNews";
-import CategoryNews from "../Sidebar/category_news/CategoryNews";
+import TopNews from "../../Top_News/TopNews";
+import CategoryNews from "../../Sidebar/category_news/CategoryNews";
 
 import LatestNewsName from "@/lib/News_naem/LatestNewsName";
-import TypeNews from "../Sidebar/type_news/TypeNews";
+import TypeNews from "../../Sidebar/type_news/TypeNews";
 
 const TopNewsLyout = ({ latestNews, category }) => {
   return (

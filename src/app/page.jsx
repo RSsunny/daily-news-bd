@@ -1,6 +1,7 @@
 import Banner from "@/components/Header/Banner/Banner";
 import Navbar from "@/components/Header/Navbar/Navbar";
-import TopNewsLyout from "@/components/layout/TopNewsLyout";
+import UkraineNews from "@/components/Home/ukraine/UkraineNews";
+import TopNewsLyout from "@/components/Home/layout/TopNewsLyout";
 
 import Logo from "@/utils/Logo";
 
@@ -45,8 +46,12 @@ const HomePage = async () => {
     <div className="max-w-7xl mx-auto">
       <Logo />
       <Navbar />
+
       <Banner bannerNews={data?.bannerNews} />
+
       <TopNewsLyout latestNews={data?.latestNews} category={data?.category} />
+
+      <UkraineNews />
     </div>
   );
 };
