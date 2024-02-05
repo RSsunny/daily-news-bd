@@ -15,6 +15,8 @@ const TopNewsLyout = ({ latestNews, category }) => {
           <CategoryNews category={category} />
           <TypeNews />
           <CategoryNews category={category} />
+          <TypeNews />
+          <CategoryNews category={category} />
         </div>
       </div>
       <div className="absolute top-2 left-0">

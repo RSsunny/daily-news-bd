@@ -7,7 +7,7 @@ const TopNewsCard = ({ data }) => {
 
   return (
     <Link
-      href={`/newsDetails?id=${data?.id}`}
+      href={`/category/${data?.id}`}
       className="flex gap-5 border-b border-black pb-8 mb-8 cursor-pointer"
     >
       <div className="flex-1">

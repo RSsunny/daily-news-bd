@@ -4,6 +4,7 @@ import UkraineNews from "@/components/Home/ukraine/UkraineNews";
 import TopNewsLyout from "@/components/Home/layout/TopNewsLyout";
 
 import Logo from "@/utils/Logo";
+import SkeletonImg_c from "@/lib/skleton/SkeletonImg_c";
 
 async function getData() {
   try {
@@ -52,6 +53,8 @@ const HomePage = async () => {
       <TopNewsLyout latestNews={data?.latestNews} category={data?.category} />
 
       <UkraineNews />
+
+      <SkeletonImg_c />
     </div>
   );
 };

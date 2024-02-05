@@ -8,7 +8,6 @@ const PageLayout = ({ children }) => {
       <Logo />
       <Navbar />
       {children}
-      <Footer />
     </>
   );
 };
