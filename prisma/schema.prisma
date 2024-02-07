@@ -53,3 +53,21 @@ model users {
   createdAt DateTime @default(now()) @db.Timestamp(0)
   updatedAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
 }
+
+model payments {
+  id              Int    @id @default(autoincrement())
+  total           String @db.VarChar(50)
+  vat             String @db.VarChar(30)
+  payble          String @db.VarChar(50)
+  cus_details     String @db.VarChar(500)
+  ship_details    String @db.VarChar(500)
+  shipping_method String @db.VarChar(100)
+  payment_method  String @db.VarChar(100)
+  tran_id         String @db.VarChar(100)
+  delivery_status String @db.VarChar(50)
+  payment_status  String @db.VarChar(50)
+  user_id         Int    @unique
+
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+  updatedAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
+}
